@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary-bg: #f9fafb;
+  --secondary-bg: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --text-title: #111827;
+  --input-bg: rgba(0, 0, 0, 0.03);
+}
+
+.dark {
+  --primary-bg: #050505;
+  --secondary-bg: #0a0a0a;
+  --card-bg: rgba(14, 14, 14, 0.5);
+  --card-border: rgba(255, 90, 0, 0.1);
+  --text-main: #f5f5f5;
+  --text-muted: #a3a3a3;
+  --text-title: #ffffff;
+  --input-bg: rgba(23, 23, 23, 0.5);
+}
+
+@theme {
+  --font-serif-clean: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  --color-primary-bg: var(--primary-bg);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-title: var(--text-title);
+  --color-input-bg: var(--input-bg);
+  
+  --color-accent-orange: #ff5a00;
+  --color-accent-glow: #ffa000;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 40s linear infinite;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    background-color: var(--color-primary-bg);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Lenis smooth scrolling styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  /* Custom scrollbar for premium theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-primary-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-card-border);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-orange);
+  }
+}
