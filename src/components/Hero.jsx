@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import Typewriter from './common/Typewriter';
 import profileImg from '../assets/profile.jpeg';
+import resumePdf from '../assets/Sathiyabalan_SE_CV.pdf';
 
 
 export default function Hero() {
@@ -142,14 +143,6 @@ export default function Hero() {
           animate="visible"
           className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left order-2 md:order-1"
         >
-          {/* Intro Tag */}
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent-orange/20 bg-accent-orange/5 text-accent-orange text-xs font-semibold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(255,90,0,0.1)]"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent-orange animate-ping" />
-            Welcome to my portfolio
-          </motion.div>
 
           {/* Name */}
           <motion.h1
@@ -201,8 +194,8 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.03, borderColor: 'var(--color-accent-orange)', backgroundColor: 'rgba(255, 90, 0, 0.05)' }}
               whileTap={{ scale: 0.97 }}
-              href="/resume.pdf"
-              download
+              href={resumePdf}
+              download="Sathiyabalan_SE_CV.pdf"
               className="flex items-center gap-2 px-6 py-3.5 border border-accent-orange/30 text-accent-orange font-semibold rounded-full bg-accent-orange/5 transition cursor-pointer text-sm"
             >
               Download Resume

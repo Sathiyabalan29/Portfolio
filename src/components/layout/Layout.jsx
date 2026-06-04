@@ -191,8 +191,8 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Sathiyabalan. All rights reserved.</p>
           <div className="flex space-x-6">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-accent-orange transition">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-accent-orange transition">LinkedIn</a>
+            <a href="https://github.com/Sathiyabalan29" target="_blank" rel="noreferrer" className="hover:text-accent-orange transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/sathiyabalan-santhirakasan" target="_blank" rel="noreferrer" className="hover:text-accent-orange transition">LinkedIn</a>
           </div>
         </div>
       </footer>
